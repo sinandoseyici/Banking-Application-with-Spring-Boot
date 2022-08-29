@@ -22,6 +22,10 @@ public class CusCustomerEntityService {
         return cusCustomerDao.findById(id);
     }
 
+    public CusCustomer findByIdWithControl(Long id){
+        return cusCustomerDao.findById(id).orElseThrow();
+    }
+
     public CusCustomer save(CusCustomer cusCustomer){
         return cusCustomerDao.save(cusCustomer);
     }
