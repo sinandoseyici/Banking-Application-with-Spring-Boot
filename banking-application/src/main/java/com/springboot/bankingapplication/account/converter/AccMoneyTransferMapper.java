@@ -1,5 +1,6 @@
 package com.springboot.bankingapplication.account.converter;
 
+import com.springboot.bankingapplication.account.dto.AccMoneyTransferDto;
 import com.springboot.bankingapplication.account.dto.AccMoneyTransferRequestDto;
 import com.springboot.bankingapplication.account.entity.AccMoneyTransfer;
 import org.mapstruct.Mapper;
@@ -12,4 +13,7 @@ public interface AccMoneyTransferMapper {
     AccMoneyTransferMapper INSTANCE = Mappers.getMapper(AccMoneyTransferMapper.class);
 
     AccMoneyTransfer convertToAccMoneyTransfer(AccMoneyTransferRequestDto accMoneyTransferRequestDto);
+
+    AccMoneyTransferDto convertToAccMoneyTransferDto(AccMoneyTransfer accMoneyTransfer);
+
 }

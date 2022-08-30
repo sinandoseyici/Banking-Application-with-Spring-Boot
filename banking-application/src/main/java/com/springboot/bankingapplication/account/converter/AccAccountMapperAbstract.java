@@ -9,7 +9,7 @@ import org.mapstruct.ReportingPolicy;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
-public abstract class AccACcountMapperAbstract {
+public abstract class AccAccountMapperAbstract {
 
     @Autowired
     CusCustomerEntityService cusCustomerEntityService;

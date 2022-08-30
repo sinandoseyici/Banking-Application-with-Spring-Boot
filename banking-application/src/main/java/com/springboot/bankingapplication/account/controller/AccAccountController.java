@@ -1,10 +1,9 @@
 package com.springboot.bankingapplication.account.controller;
 
-import com.springboot.bankingapplication.account.dto.AccAccountDto;
-import com.springboot.bankingapplication.account.dto.AccAccountSaveRequestDto;
-import com.springboot.bankingapplication.account.dto.AccMoneyActivityRequestDto;
-import com.springboot.bankingapplication.account.dto.AccMoneyTransferRequestDto;
+import com.springboot.bankingapplication.account.dto.*;
+import com.springboot.bankingapplication.account.service.AccAccountActivityService;
 import com.springboot.bankingapplication.account.service.AccAccountService;
+import com.springboot.bankingapplication.account.service.AccMoneyTransferService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +15,8 @@ import java.util.List;
 public class AccAccountController {
 
     private final AccAccountService accAccountService;
+    private final AccAccountActivityService accAccountActivityService;
+    private final AccMoneyTransferService accMoneyTransferService;
 
     @GetMapping
     public List<AccAccountDto> findAll(){
@@ -47,18 +48,20 @@ public class AccAccountController {
     }
 
     @PostMapping("/money-transfer")
-    public void transferMoney(@RequestBody AccMoneyTransferRequestDto accMoneyTransferRequestDto){
-        accAccountService.transferMoney(accMoneyTransferRequestDto);
+    public AccMoneyTransferDto transferMoney(@RequestBody AccMoneyTransferRequestDto accMoneyTransferRequestDto){
+        AccMoneyTransferDto accMoneyTransferDto = accMoneyTransferService.transferMoney(accMoneyTransferRequestDto);
+
+        return accMoneyTransferDto;
     }
 
     @PostMapping("/withdraw")
     public void withdraw(@RequestBody AccMoneyActivityRequestDto accMoneyActivityRequestDto){
-        accAccountService.withdraw(accMoneyActivityRequestDto);
+        AccMoneyActivityDto accMoneyActivityDto = accAccountActivityService.withdraw(accMoneyActivityRequestDto);
     }
 
     @PostMapping("/deposit")
     public void deposit(@RequestBody AccMoneyActivityRequestDto accMoneyActivityRequestDto){
-        accAccountService.deposit(accMoneyActivityRequestDto);
+        AccMoneyActivityDto accMoneyActivityDto = accAccountActivityService.deposit(accMoneyActivityRequestDto);
     }
 
 }
