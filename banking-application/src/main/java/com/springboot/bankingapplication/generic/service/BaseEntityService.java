@@ -2,6 +2,8 @@ package com.springboot.bankingapplication.generic.service;
 
 import com.springboot.bankingapplication.generic.entity.BaseAdditionalFields;
 import com.springboot.bankingapplication.generic.entity.BaseEntity;
+import com.springboot.bankingapplication.generic.enums.ErrorMessage;
+import com.springboot.bankingapplication.generic.exceptions.ItemNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
@@ -35,7 +37,7 @@ public abstract class BaseEntityService<E extends BaseEntity,D extends JpaReposi
         if (optionalEntity.isPresent()){
             entity = optionalEntity.get();
         } else {
-            throw new RuntimeException("Item could not found!");
+            throw new ItemNotFoundException(ErrorMessage.ITEM_NOT_FOUND);
         }
 
         return entity;
