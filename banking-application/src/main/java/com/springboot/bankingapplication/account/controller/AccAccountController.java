@@ -2,6 +2,8 @@ package com.springboot.bankingapplication.account.controller;
 
 import com.springboot.bankingapplication.account.dto.AccAccountDto;
 import com.springboot.bankingapplication.account.dto.AccAccountSaveRequestDto;
+import com.springboot.bankingapplication.account.dto.AccMoneyActivityRequestDto;
+import com.springboot.bankingapplication.account.dto.AccMoneyTransferRequestDto;
 import com.springboot.bankingapplication.account.service.AccAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -43,4 +45,20 @@ public class AccAccountController {
 
         accAccountService.cancel(id);
     }
+
+    @PostMapping("/money-transfer")
+    public void transferMoney(@RequestBody AccMoneyTransferRequestDto accMoneyTransferRequestDto){
+        accAccountService.transferMoney(accMoneyTransferRequestDto);
+    }
+
+    @PostMapping("/withdraw")
+    public void withdraw(@RequestBody AccMoneyActivityRequestDto accMoneyActivityRequestDto){
+        accAccountService.withdraw(accMoneyActivityRequestDto);
+    }
+
+    @PostMapping("/deposit")
+    public void deposit(@RequestBody AccMoneyActivityRequestDto accMoneyActivityRequestDto){
+        accAccountService.deposit(accMoneyActivityRequestDto);
+    }
+
 }
