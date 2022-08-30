@@ -95,7 +95,7 @@ public class AccAccountActivityService {
 
         accAccountActivity.setAccActivityType(activityType);
         accAccountActivity.setAmount(amount);
-        accAccountActivity.setAccACcountId(accAccountId);
+        accAccountActivity.setAccAccountId(accAccountId);
         accAccountActivity.setCurrentBalance(newBalance);
         accAccountActivity.setTransactionDate(new Date());
 

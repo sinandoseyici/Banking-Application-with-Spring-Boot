@@ -21,7 +21,7 @@ public class AccAccountActivity extends BaseEntity {
     private Long id;
 
     @Column(name = "ID_ACC_ACCOUNT")
-    private Long accACcountId;
+    private Long accAccountId;
 
     @Column(name = "AMOUNT", precision = 19, scale = 2)
     private BigDecimal amount;
