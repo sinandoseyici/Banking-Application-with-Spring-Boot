@@ -37,4 +37,10 @@ public class AccAccountController {
 
         return accAccountDto;
     }
+
+    @PatchMapping("/cancel/{id}")
+    public void cancel(@PathVariable Long id){
+
+        accAccountService.cancel(id);
+    }
 }
