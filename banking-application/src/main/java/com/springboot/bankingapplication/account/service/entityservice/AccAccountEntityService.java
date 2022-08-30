@@ -1,4 +1,4 @@
-package com.springboot.bankingapplication.account.entity.entityservice;
+package com.springboot.bankingapplication.account.service.entityservice;
 
 import com.springboot.bankingapplication.account.dao.AccAccountDao;
 import com.springboot.bankingapplication.account.entity.AccAccount;

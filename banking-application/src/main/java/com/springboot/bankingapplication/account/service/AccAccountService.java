@@ -5,7 +5,7 @@ import com.springboot.bankingapplication.account.converter.AccAccountMapper;
 import com.springboot.bankingapplication.account.dto.AccAccountDto;
 import com.springboot.bankingapplication.account.dto.AccAccountSaveRequestDto;
 import com.springboot.bankingapplication.account.entity.AccAccount;
-import com.springboot.bankingapplication.account.entity.entityservice.AccAccountEntityService;
+import com.springboot.bankingapplication.account.service.entityservice.AccAccountEntityService;
 import com.springboot.bankingapplication.generic.EnumGenStatus;
 import com.springboot.bankingapplication.generic.util.StringUtil;
 import lombok.RequiredArgsConstructor;
