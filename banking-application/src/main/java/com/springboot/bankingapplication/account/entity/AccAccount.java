@@ -4,6 +4,7 @@ import com.springboot.bankingapplication.account.enums.EnumAccAccountType;
 import com.springboot.bankingapplication.account.enums.EnumAccCurrencyType;
 import com.springboot.bankingapplication.customer.entity.CusCustomer;
 import com.springboot.bankingapplication.generic.EnumGenStatus;
+import com.springboot.bankingapplication.generic.entity.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,7 +17,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Table(name = "ACC_ACCOUNT")
-public class AccAccount {
+public class AccAccount extends BaseEntity {
 
     @Id
     @SequenceGenerator(name = "AccAccount", sequenceName = "ACC_ACCOUNT_ID_SEQ")

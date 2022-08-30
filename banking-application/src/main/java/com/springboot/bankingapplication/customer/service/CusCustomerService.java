@@ -5,7 +5,7 @@ import com.springboot.bankingapplication.customer.dto.CusCustomerDto;
 import com.springboot.bankingapplication.customer.dto.CusCustomerSaveRequestDto;
 import com.springboot.bankingapplication.customer.dto.CusCustomerUpdateRequestDto;
 import com.springboot.bankingapplication.customer.entity.CusCustomer;
-import com.springboot.bankingapplication.customer.entityservice.CusCustomerEntityService;
+import com.springboot.bankingapplication.customer.entity.entityservice.CusCustomerEntityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

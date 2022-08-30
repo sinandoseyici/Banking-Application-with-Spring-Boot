@@ -2,7 +2,7 @@ package com.springboot.bankingapplication.account.converter;
 
 import com.springboot.bankingapplication.account.dto.AccAccountSaveRequestDto;
 import com.springboot.bankingapplication.account.entity.AccAccount;
-import com.springboot.bankingapplication.customer.entityservice.CusCustomerEntityService;
+import com.springboot.bankingapplication.customer.entity.entityservice.CusCustomerEntityService;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;

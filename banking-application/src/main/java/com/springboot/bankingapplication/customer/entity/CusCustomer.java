@@ -1,5 +1,6 @@
 package com.springboot.bankingapplication.customer.entity;
 
+import com.springboot.bankingapplication.generic.entity.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name = "CUS_CUSTOMER")
-public class CusCustomer {
+public class CusCustomer extends BaseEntity {
 
     @Id
     @SequenceGenerator(name = "CusCustomer", sequenceName = "CUS_CUSTOMER_ID_SEQ")
