@@ -3,12 +3,14 @@ package com.springboot.bankingapplication.account.dto;
 import com.springboot.bankingapplication.account.enums.EnumAccAccountType;
 import com.springboot.bankingapplication.account.enums.EnumAccCurrencyType;
 import com.springboot.bankingapplication.generic.enums.EnumGenStatus;
+import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
+@Builder
 public class AccAccountDto {
 
     private Long id;
