@@ -7,6 +7,7 @@ import com.springboot.bankingapplication.customer.dto.CusCustomerUpdateRequestDt
 import com.springboot.bankingapplication.customer.entity.CusCustomer;
 import com.springboot.bankingapplication.customer.entity.entityservice.CusCustomerEntityService;
 import com.springboot.bankingapplication.customer.enums.EnumCusErrorMessage;
+import com.springboot.bankingapplication.generic.enums.ErrorMessage;
 import com.springboot.bankingapplication.generic.exceptions.BusinessException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -53,6 +54,10 @@ public class CusCustomerService {
     }
 
     public CusCustomerDto save(CusCustomerSaveRequestDto cusCustomerSaveRequestDto){
+
+        if (cusCustomerSaveRequestDto == null){
+            throw new BusinessException(ErrorMessage.PARAMETER_CANNOT_BE_NULL);
+        }
 
         CusCustomer cusCustomer = CusCustomerMapper.INSTANCE.convertToCusCustomer(cusCustomerSaveRequestDto);
 
