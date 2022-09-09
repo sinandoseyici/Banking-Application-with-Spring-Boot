@@ -3,7 +3,7 @@ package com.springboot.bankingapplication.account.entity;
 import com.springboot.bankingapplication.account.enums.EnumAccAccountType;
 import com.springboot.bankingapplication.account.enums.EnumAccCurrencyType;
 import com.springboot.bankingapplication.customer.entity.CusCustomer;
-import com.springboot.bankingapplication.generic.EnumGenStatus;
+import com.springboot.bankingapplication.generic.enums.EnumGenStatus;
 import com.springboot.bankingapplication.generic.entity.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;

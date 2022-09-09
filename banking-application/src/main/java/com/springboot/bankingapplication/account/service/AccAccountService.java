@@ -8,7 +8,7 @@ import com.springboot.bankingapplication.account.service.entityservice.AccAccoun
 import com.springboot.bankingapplication.account.service.entityservice.AccAccountEntityService;
 import com.springboot.bankingapplication.account.service.entityservice.AccMoneyTransferEntityService;
 import com.springboot.bankingapplication.account.util.AccAccountUtil;
-import com.springboot.bankingapplication.generic.EnumGenStatus;
+import com.springboot.bankingapplication.generic.enums.EnumGenStatus;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

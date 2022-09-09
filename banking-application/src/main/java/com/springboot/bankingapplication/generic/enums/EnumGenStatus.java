@@ -1,4 +1,4 @@
-package com.springboot.bankingapplication.generic;
+package com.springboot.bankingapplication.generic.enums;
 
 public enum EnumGenStatus {
 
