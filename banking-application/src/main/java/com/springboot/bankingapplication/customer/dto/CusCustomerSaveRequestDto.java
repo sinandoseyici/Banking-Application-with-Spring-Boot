@@ -2,9 +2,9 @@ package com.springboot.bankingapplication.customer.dto;
 
 import lombok.Data;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 
 @Data
 public class CusCustomerSaveRequestDto {
@@ -18,7 +18,7 @@ public class CusCustomerSaveRequestDto {
     @Positive
     private Long identityNo;
 
-    @Min(8)
+    @Size(min = 8)
     private String password;
 
 }
