@@ -10,6 +10,7 @@ import com.springboot.bankingapplication.customer.enums.EnumCusErrorMessage;
 import com.springboot.bankingapplication.generic.enums.ErrorMessage;
 import com.springboot.bankingapplication.generic.exceptions.BusinessException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class CusCustomerService {
 
     private final CusCustomerEntityService cusCustomerEntityService;
 
+    private final PasswordEncoder passwordEncoder;
     public List<CusCustomerDto> findAll(){
 
         List<CusCustomer> cusCustomerList = cusCustomerEntityService.findAll();
@@ -61,6 +63,9 @@ public class CusCustomerService {
 
         CusCustomer cusCustomer = CusCustomerMapper.INSTANCE.convertToCusCustomer(cusCustomerSaveRequestDto);
 
+        String encodedPassword = passwordEncoder.encode(cusCustomer.getPassword());
+        cusCustomer.setPassword(encodedPassword);
+
         cusCustomer = cusCustomerEntityService.save(cusCustomer);
 
         CusCustomerDto cusCustomerDto = CusCustomerMapper.INSTANCE.convertToCusCustomerDto(cusCustomer);
@@ -81,6 +86,9 @@ public class CusCustomerService {
         }
 
         CusCustomer cusCustomer = CusCustomerMapper.INSTANCE.convertToCusCustomer(cusCustomerUpdateRequestDto);
+
+        String encodedPassword = passwordEncoder.encode(cusCustomer.getPassword());
+        cusCustomer.setPassword(encodedPassword);
 
         cusCustomer = cusCustomerEntityService.save(cusCustomer);
 

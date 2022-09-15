@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CusCustomerDao extends JpaRepository<CusCustomer, Long> {
 
+    CusCustomer findByIdentityNo(Long identityNo);
 }

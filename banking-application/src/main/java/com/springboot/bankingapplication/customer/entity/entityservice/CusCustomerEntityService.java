@@ -15,4 +15,7 @@ public class CusCustomerEntityService extends BaseEntityService<CusCustomer, Cus
         super(dao);
     }
 
+    public CusCustomer findByIdentityNo(Long identityNo){
+        return getDao().findByIdentityNo(identityNo);
+    }
 }
